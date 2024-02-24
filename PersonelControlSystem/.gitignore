@@ -1,0 +1,49 @@
+# Visual Studio'dan oluşan dosyalar
+.vs/
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.dll
+*.exe
+*.idb
+*.pdb
+*.ilk
+*.aps
+*.res
+*.obj
+*.ncb
+*.suo
+*.user
+*.aps
+*.vshost.*
+*_resset.*
+*_References.*
+_ReSharper*/
+
+# ReSharper tarafından oluşturulan dosyalar
+_ReSharper*/
+
+# SQL Server'ın LocalDB dosyaları
+App_Data/*.mdf
+App_Data/*.ldf
+
+# Xamarin
+packages/
+
+# Resharper
+_ReSharper*/
+
+# NuGet
+*.nuget.targets
+*.nuget.props

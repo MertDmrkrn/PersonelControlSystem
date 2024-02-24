@@ -1,0 +1,60 @@
+﻿@using EntityLayer
+@model List<Project>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewPersonelLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Aktif Projeler</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th style="display: none">
+                                    #
+                                </th>
+                                <th>
+                                    Proje Adı
+                                </th>
+                                <th>
+                                    Projeye Başlanılan Tarih
+                                </th>
+                                <th>Projelerin Bilgileri</th>
+                                </thead>
+
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td style="display: none">
+                                                @item.ProjectID
+                                            </td>
+                                            <td>
+                                                @item.ProjectName
+                                            </td>
+                                            <td>
+                                                @item.CreatedDate
+                                            </td>
+                                            <td><a href="#" class="btn btn-info">Proje Bilgisi</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

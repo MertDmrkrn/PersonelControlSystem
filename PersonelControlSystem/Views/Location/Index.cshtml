@@ -1,0 +1,52 @@
+﻿@using EntityLayer
+@model List<Location>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewPersonelLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Konumlar</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th style="display: none">
+                                    #
+                                </th>
+                                <th>
+                                    Konum
+                                </th>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td style="display: none">
+                                                @item.LocationID
+                                            </td>
+                                            <td>
+                                                @item.LocationName
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

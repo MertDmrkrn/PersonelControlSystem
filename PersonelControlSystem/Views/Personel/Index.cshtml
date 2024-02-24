@@ -1,0 +1,95 @@
+﻿@using EntityLayer
+@model List<Personel>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewPersonelLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">İş Listesi</h4>
+                        <p class="card-category">İş Listeniz</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th style="display: none">
+                                    #
+                                </th>
+                                <th>
+                                    Ad
+                                </th>
+                                <th>
+                                    Soyad
+                                </th>
+                                <th>
+                                    Konum
+                                </th>
+                                <th>
+                                    Vardiya
+                                </th>
+                                <th>
+                                    Proje
+                                </th>
+                                <th>
+                                    İş Raporu
+                                </th>
+                                <th>
+                                    Oluşturulan Tarih
+                                </th>
+                                </thead>
+
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td style="display: none">
+                                                @item.PersonelID
+                                            </td>
+                                            <td>
+                                                @item.User.Name
+                                            </td>
+                                            <td>
+                                                @item.User.Surname
+                                            </td>
+                                            <td>
+                                                @item.Location.LocationName
+                                            </td>
+                                            <td>
+                                                @item.Shift.ShiftName
+                                            </td>
+                                            <td>
+                                                @item.Project.ProjectName
+                                            </td>
+                                            <td>
+                                                @item.JobDescription
+                                            </td>
+                                            <td>
+                                                @(((DateTime)item.CreatedDate).ToString("dd-MMM-yyyy"))
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <a href="/Personel/AddPersonel/" class="btn btn-success">Yeni İş Ekle</a>
+                <a href="#" class="btn btn-info">Düzenle</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

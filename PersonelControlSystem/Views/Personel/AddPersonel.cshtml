@@ -1,0 +1,80 @@
+﻿@using EntityLayer
+@model Tuple<Location, Shift, Project>
+
+
+@{
+    ViewData["Title"] = "AddPersonel";
+    Layout = "~/Views/Shared/_NewPersonelLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Yeni İş Ekle</h4>
+                        <p class="card-category">Yeni İşinizi Ekleyebilirsiniz.</p>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Ad</label>
+                                        <input type="text" class="form-control" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Soyad</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating" style="font-size:medium">Vardiya</label> @* combobox olacak *@
+                                        @Html.DropDownListFor(x => x.Item2, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating" style="font-size:medium">Proje</label> @* combobox olacak *@
+                                        @Html.DropDownListFor(x => x.Item3, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating" style="font-size:medium">Konum</label> @* combobox olacak *@
+                                        @Html.DropDownListFor(x=>x.Item1, (List<SelectListItem>)ViewBag.dgr, new { @class="form-control"})
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Oluşturulan Tarih</label>
+                                        </br>
+                                        <input type="datetime-local" name="bdaytime" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">İş Raporu</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button class="btn btn-primary pull-right">İş Ekle</button>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

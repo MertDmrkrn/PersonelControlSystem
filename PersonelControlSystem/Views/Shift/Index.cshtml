@@ -1,0 +1,59 @@
+﻿@using EntityLayer
+@model List<Shift> 
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewPersonelLayout.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Vardiyalar</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th style="display: none">
+                                    #
+                                </th>
+                                <th>
+                                    Vardiya
+                                </th>
+                                <th>
+                                    Çalışma Saat Aralığı
+                                </th>
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td style="display: none">
+                                                @item.ShiftID
+                                            </td>
+                                            <td>
+                                                @item.ShiftName
+                                            </td>
+                                            <td>
+                                                @item.ShiftTime
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
